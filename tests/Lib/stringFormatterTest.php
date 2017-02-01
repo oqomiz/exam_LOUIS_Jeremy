@@ -33,4 +33,18 @@ class stringFormatterTest extends \PHPUnit_Framework_TestCase{
 
 		$this->assertSame($result,'abcdef');
 	}
+
+	public function testPrefixFull(){
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->prefix('abc','def',true);
+
+		$this->assertSame($result,'abcDef');
+	}
+
+	public function testSuffixFull(){
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->suffix('abc','def',true);
+
+		$this->assertSame($result,'defAbc');
+	}
 }
