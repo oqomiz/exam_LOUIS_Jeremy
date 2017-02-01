@@ -7,18 +7,30 @@ use Lib\stringFormatter;
 class stringFormatterTest extends \PHPUnit_Framework_TestCase{
 	
 	public function testPrefix(){
-		echo 'message_test';
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->prefix('abc','def');
+
+		$this->assertSame($result,'abcdef');
 	}
 
 	public function testSuffix(){
-		echo 'message_test';
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->suffix('abc','def');
+
+		$this->assertSame($result,'defabc');
 	}
 
 	public function testToCamelCase(){
-		echo 'message_test';
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->toCamelCase('abc','def');
+
+		$this->assertSame($result,'abcDef');
 	}
 
 	public function testConcatString(){
-		echo 'message_test';
+		$stringFormatter = new StringFormatter();
+		$result = $stringFormatter->concatString('abc','def');
+
+		$this->assertSame($result,'abcdef');
 	}
 }
